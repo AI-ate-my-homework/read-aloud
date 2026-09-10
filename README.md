@@ -1,7 +1,7 @@
-# Read Aloud — On-Device Text-to-Speech 
+# Read Aloud  On-Device Text-to-Speech 
 
 **Free, private, offline text-to-speech for webpages and PDFs.** Read Aloud turns any
-article or PDF into natural-sounding narration entirely on your device — no server,
+article or PDF into natural-sounding narration entirely on your device no server,
 no account, no API key, nothing ever leaves your browser.
 
 Built on [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M), a small
