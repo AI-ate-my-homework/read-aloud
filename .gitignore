@@ -9,3 +9,4 @@ extension/content.bundle.js
 extension/pdf/viewer.bundle.js
 extension/pdf/pdf.worker.mjs
 extension/vendor/
+read-aloud-chrome-store.zip

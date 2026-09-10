@@ -3,7 +3,7 @@
   "name": "Read Aloud — On-Device",
   "version": "0.1.0",
   "description": "Natural-sounding text-to-speech for webpages and PDFs. Runs entirely on-device — nothing you read is ever sent to a server.",
-  "permissions": ["offscreen", "storage", "scripting", "activeTab", "contextMenus", "declarativeNetRequest", "declarativeNetRequestWithHostAccess", "downloads"],
+  "permissions": ["offscreen", "scripting", "activeTab", "contextMenus", "declarativeNetRequest", "declarativeNetRequestWithHostAccess"],
   "host_permissions": ["<all_urls>"],
   "commands": {
     "read-from-selection": {
