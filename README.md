@@ -1,4 +1,4 @@
-# Read Aloud — On-Device Text-to-Speech for Chrome
+# Read Aloud — On-Device Text-to-Speech 
 
 **Free, private, offline text-to-speech for webpages and PDFs.** Read Aloud turns any
 article or PDF into natural-sounding narration entirely on your device — no server,
