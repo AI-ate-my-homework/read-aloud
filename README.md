@@ -15,14 +15,17 @@ synthesized on your own machine.
 [![On-device](https://img.shields.io/badge/inference-on--device-black.svg)](#privacy)
 [![No account required](https://img.shields.io/badge/account-not%20required-black.svg)](#privacy)
 
+**[Download the extension](https://github.com/AI-ate-my-homework/read-aloud/archive/refs/heads/main.zip)** — no build step, no Chrome Web Store account needed. See [Install](#install-3-steps-no-build-required) for the 3-step setup.
+
 ## Contents
 
 - [Why](#why)
 - [Features](#features)
-- [Install](#install)
+- [Install (3 steps, no build required)](#install-3-steps-no-build-required)
 - [Usage](#usage)
 - [Privacy](#privacy)
 - [How it works](#how-it-works)
+- [Building from source](#building-from-source)
 - [Known limitations](#known-limitations)
 - [Contributing](#contributing)
 - [License](#license)
@@ -58,22 +61,21 @@ material going anywhere but your own machine.
 - **Minimal, glass-styled floating player** — a small, draggable, black-and-white
   UI that stays out of the way of the page you're reading.
 
-## Install
+## Install (3 steps, no build required)
 
-Not yet on the Chrome Web Store — install it from source:
+Not on the Chrome Web Store yet — the extension is already built and ready to
+load straight from this repo:
 
-```bash
-git clone https://github.com/<your-username>/read-aloud.git
-cd read-aloud
-npm install
-npm run build
-```
+1. **Download** — click the green **Code** button above and choose
+   **Download ZIP** (or `git clone` this repo), then unzip it.
+2. **Load it** — open `chrome://extensions` in Chrome, turn on **Developer
+   mode** (top right), click **Load unpacked**, and select the `extension`
+   folder from the unzipped download.
+3. **Use it** — open any article or PDF and click the Read Aloud icon in your
+   toolbar. It starts reading immediately.
 
-Then in Chrome:
-
-1. Go to `chrome://extensions`.
-2. Enable **Developer mode** (top right).
-3. Click **Load unpacked** and select the `extension/` folder produced by the build.
+Prefer to build from source instead (e.g. to modify the code)? See
+[Building from source](#building-from-source) below.
 
 ## Usage
 
@@ -120,6 +122,21 @@ build.mjs             esbuild bundling + static asset copy
 Text extraction, sentence splitting, and speech synthesis all happen in the
 browser tab or an offscreen document belonging to the extension — never on a
 remote server.
+
+## Building from source
+
+Only needed if you want to modify the code — the `extension/` folder in this
+repo is already built and ready to load as-is (see [Install](#install-3-steps-no-build-required)).
+
+```bash
+git clone https://github.com/AI-ate-my-homework/read-aloud.git
+cd read-aloud
+npm install
+npm run build
+```
+
+This regenerates the `extension/` folder from `src/`. Reload the extension at
+`chrome://extensions` (the reload icon on its card) to pick up changes.
 
 ## Known limitations
 

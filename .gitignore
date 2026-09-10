@@ -3,10 +3,7 @@ src/vendor/
 .claude/
 .agents/
 skills-lock.json
-extension/background.js
-extension/offscreen.js
-extension/content.bundle.js
-extension/pdf/viewer.bundle.js
-extension/pdf/pdf.worker.mjs
-extension/vendor/
 read-aloud-chrome-store.zip
+
+# extension/ build output IS committed on purpose (not gitignored) so people can
+# download the repo and load it straight into Chrome with no build step required.
