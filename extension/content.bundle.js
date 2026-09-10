@@ -2097,7 +2097,7 @@
   });
 
   // src/player-ui.js
-  var ICONS, STYLE, FloatingPlayer;
+  var ICONS, CAT_SVG, STYLE, FloatingPlayer;
   var init_player_ui = __esm({
     "src/player-ui.js"() {
       ICONS = {
@@ -2109,6 +2109,11 @@
         download: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>`,
         grip: `<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.4"/><circle cx="15" cy="6" r="1.4"/><circle cx="9" cy="12" r="1.4"/><circle cx="15" cy="12" r="1.4"/><circle cx="9" cy="18" r="1.4"/><circle cx="15" cy="18" r="1.4"/></svg>`
       };
+      CAT_SVG = `<svg viewBox="0 0 224 152" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0a0a0a"><rect x="56" y="0" width="8" height="8"/><rect x="16" y="8" width="8" height="8"/><rect x="48" y="8" width="24" height="8"/><rect x="8" y="16" width="24" height="8"/><rect x="40" y="16" width="40" height="8"/><rect x="0" y="24" width="72" height="8"/><rect x="8" y="32" width="72" height="8"/><rect x="0" y="40" width="80" height="8"/><rect x="0" y="48" width="136" height="8"/><rect x="0" y="56" width="144" height="8"/><rect x="0" y="64" width="64" height="8"/><rect x="80" y="64" width="16" height="8"/><rect x="112" y="64" width="48" height="8"/><rect x="0" y="72" width="168" height="8"/><rect x="0" y="80" width="168" height="8"/><rect x="8" y="88" width="160" height="8"/><rect x="8" y="96" width="168" height="8"/><rect x="8" y="104" width="160" height="8"/><rect x="8" y="112" width="160" height="8"/><rect x="16" y="120" width="152" height="8"/><rect x="24" y="128" width="136" height="8"/><rect x="32" y="136" width="112" height="8"/><rect x="48" y="144" width="88" height="8"/></g>
+<g class="cat-tail" style="transform-origin:152px 96px" fill="#0a0a0a"><rect x="144" y="56" width="48" height="8"/><rect x="160" y="64" width="40" height="8"/><rect x="168" y="72" width="40" height="8"/><rect x="168" y="80" width="48" height="8"/><rect x="176" y="88" width="40" height="8"/><rect x="184" y="96" width="32" height="8"/><rect x="192" y="104" width="32" height="8"/><rect x="192" y="112" width="32" height="8"/><rect x="200" y="120" width="24" height="8"/><rect x="200" y="128" width="24" height="8"/><rect x="200" y="136" width="24" height="8"/><rect x="200" y="144" width="16" height="8"/></g>
+<g fill="#8a8a8a"><rect x="64" y="64" width="16" height="8"/><rect x="96" y="64" width="16" height="8"/></g>
+</svg>`;
       STYLE = `
   :host { all: initial; }
   * { box-sizing: border-box; }
@@ -2144,6 +2149,26 @@
     .panel { background: #141416; backdrop-filter: none; -webkit-backdrop-filter: none; }
   }
   @keyframes rise { to { opacity: 1; transform: translateY(0) scale(1); } }
+
+  .cat {
+    position: absolute;
+    top: -27px;
+    left: 14px;
+    width: 54px;
+    height: 37px;
+    pointer-events: none;
+    z-index: 1;
+    filter: drop-shadow(0 0 1.5px rgba(255,255,255,0.9)) drop-shadow(0 0 3px rgba(255,255,255,0.45));
+  }
+  .cat svg { width: 100%; height: 100%; display: block; }
+  .cat-tail { animation: tail-flick 3.4s ease-in-out infinite; }
+  @keyframes tail-flick {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-15deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cat-tail { animation: none; }
+  }
 
   .header {
     display: flex;
@@ -2337,6 +2362,7 @@
           this.panel = document.createElement("div");
           this.panel.className = "panel";
           this.panel.innerHTML = `
+      <div class="cat">${CAT_SVG}</div>
       <div class="row header">
         <span class="grip">${ICONS.grip}</span>
         <span class="title"></span>
