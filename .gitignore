@@ -1,0 +1,11 @@
+node_modules/
+src/vendor/
+.claude/
+.agents/
+skills-lock.json
+extension/background.js
+extension/offscreen.js
+extension/content.bundle.js
+extension/pdf/viewer.bundle.js
+extension/pdf/pdf.worker.mjs
+extension/vendor/

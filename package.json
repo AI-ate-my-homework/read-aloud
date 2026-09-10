@@ -1,0 +1,35 @@
+{
+  "name": "read-aloud",
+  "version": "1.0.0",
+  "description": "Free, on-device text-to-speech Chrome extension for webpages and PDFs. No server, no account, no API key — natural neural voices via Kokoro-82M, running entirely in your browser.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chrome-extension",
+    "text-to-speech",
+    "tts",
+    "read-aloud",
+    "on-device-ai",
+    "offline-tts",
+    "kokoro",
+    "pdf-reader",
+    "accessibility",
+    "privacy",
+    "manifest-v3"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "kokoro-js": "^1.2.1",
+    "lamejs": "^1.2.1",
+    "pdfjs-dist": "^6.3.289"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

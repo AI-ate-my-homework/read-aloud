@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Read Aloud — On-Device",
+  "version": "0.1.0",
+  "description": "Natural-sounding text-to-speech for webpages and PDFs. Runs entirely on-device — nothing you read is ever sent to a server.",
+  "permissions": ["offscreen", "storage", "scripting", "activeTab", "contextMenus", "declarativeNetRequest", "declarativeNetRequestWithHostAccess", "downloads"],
+  "host_permissions": ["<all_urls>"],
+  "commands": {
+    "read-from-selection": {
+      "suggested_key": { "default": "Ctrl+Shift+Y", "mac": "Command+Shift+Y" },
+      "description": "Start reading from the current text selection"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Read this page aloud",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["pdf/*", "vendor/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
